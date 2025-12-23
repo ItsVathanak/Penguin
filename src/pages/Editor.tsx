@@ -79,13 +79,13 @@ export default function Editor() {
       />
 
       {/* 2. EDITOR WORKSPACE */}
-      <div className="flex-1 flex h-full">
+      <div className="flex-1 flex h-full min-w-0 overflow-hidden">
         
         {/* Check for active note */}
         {activeNote ? (
             <>
                 {/* INPUT */}
-                <section className="w-1/2 border-r border-gray-200 dark:border-gray-700 flex flex-col">
+                <section className="w-1/2 min-w-0 border-r border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden">
                   <div className="p-3 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
                     <h2 className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                       Input
@@ -98,7 +98,7 @@ export default function Editor() {
 
                   <textarea 
                     ref={editorRef}
-                    className="flex-1 w-full p-6 resize-none outline-none bg-transparent text-gray-800 dark:text-gray-100 font-mono text-sm leading-relaxed overflow-auto"
+                    className="flex-1 w-full p-6 resize-none outline-none bg-transparent text-gray-800 dark:text-gray-100 font-mono text-sm leading-relaxed overflow-auto break-words whitespace-pre-wrap"
                     value={activeNote.content}
                     onChange={(e) => updateNote(activeNote.id, e.target.value)}
                     onScroll={handleEditorScroll}
@@ -108,7 +108,7 @@ export default function Editor() {
                 </section>
 
                 {/* PREVIEW */}
-                <section className="w-1/2 flex flex-col h-full bg-white dark:bg-gray-900">
+                <section className="w-1/2 min-w-0 flex flex-col h-full bg-white dark:bg-gray-900 overflow-hidden">
                   <div className="p-3 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
                      <h2 className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                       Preview
@@ -117,7 +117,7 @@ export default function Editor() {
 
                   <div 
                     ref={previewRef}
-                    className="flex-1 p-6 overflow-auto prose dark:prose-invert max-w-none"
+                    className="flex-1 p-6 overflow-auto prose dark:prose-invert max-w-none break-words [overflow-wrap:anywhere]"
                     onScroll={handlePreviewScroll}
                   >
                      <ReactMarkdown 
