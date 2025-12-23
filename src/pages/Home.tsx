@@ -15,7 +15,7 @@ export default function Home() {
           waveAmplitude={1}
           particleSize={1.5}
           lerpSpeed={0.05}
-          color="#A2AADB"
+          color="#34699A"
           autoAnimate={true}
           particleVariance={1}
           particleShape="capsule"
@@ -26,7 +26,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-3.5rem)] text-center px-4 pointer-events-none">
             
-        <div className="pointer-events-auto max-w-2xl bg-white/50 dark:bg-gray-900/30 backdrop-blur-md p-8 rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-xl">
+        <div className="pointer-events-auto max-w-2xl bg-white/50 dark:bg-gray-900/30 backdrop-blur-sm p-8 rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-xl">
           <h1 className="text-6xl font-bold font-display text-gray-900 dark:text-white mb-6 tracking-tight">
             Penguin 
           </h1>
