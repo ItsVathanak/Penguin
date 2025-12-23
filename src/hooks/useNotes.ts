@@ -52,9 +52,6 @@ export function useNotes() {
 
   const deleteNote = (id: string, e: React.MouseEvent) => {
     e.stopPropagation(); // Stop the click from selecting the note while deleting it
-    
-    const confirm = window.confirm("Are you sure you want to delete this note?");
-    if (!confirm) return;
 
     setNotes((prev) => prev.filter((n) => n.id !== id));
     
